@@ -89,13 +89,13 @@ function Downloads() {
             <div className='d-flex align-items-center'>
                 <h3 className='text-bold main-text'>Smart Enerymeter Monitoring</h3>
                 <Link to='' className="text-muted px-3 text-decoration-none sub-text">Energy Monitoring</Link> <IoIosArrowForward style={{ fontSize: "22px" }} />
-                <Link to='' className="text-muted ps-3 text-decoration-none sub-text">Downloads</Link>
+                <Link to='/home' className="text-muted ps-3 text-decoration-none sub-text">Downloads</Link>
             </div>
             <div className='d-flex align-items-center justify-content-center justify-content-sm-start pt-4 pt-md-0'>
-                <CiSearch style={{ fontSize: "22px" }} />
-                <IoNotificationsOutline style={{ fontSize: "22px" }} className='mx-3' />
+                <Link className='text-decoration-none text-dark'><CiSearch style={{ fontSize: "22px" }} /></Link>
+                <Link className='text-decoration-none text-dark'><IoNotificationsOutline style={{ fontSize: "22px" }} className='mx-3' /></Link>
                 <div className='d-flex align-items-center'>
-                    <LuCircleUserRound style={{ fontSize: "30px" }} />  
+                    <LuCircleUserRound style={{ fontSize: "30px" }} />
                      <div className='ps-2 ps-md-3'>
                         <h6 className='mb-0 admin-text'>Gyrfaicon</h6>
                         <span className='text-muted admin-text'>Admin</span>
@@ -139,8 +139,8 @@ function Downloads() {
                                 <TableCell align="center" className='fw-bold'>power Factor(Avg)</TableCell>
                                 <TableCell align="center" className='fw-bold'>Total current(RYB)</TableCell>
                                 <TableCell align="left" className='fw-bold'>
-                                    <IoMdSearch style={{ fontSize: "22px" }} /> 
-                                    <FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /> 
+                                    <Link className='text-decoration-none text-dark'><IoMdSearch style={{ fontSize: "22px" }} /> </Link>
+                                    <Link className='text-decoration-none text-dark'><FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /> </Link>
                                 </TableCell>
                             </TableRow>
                         </TableHead>
@@ -169,8 +169,8 @@ function Downloads() {
                                 <TableCell align="left" className='fw-bold'>Timestamp</TableCell>
                                 <TableCell align="left" className='fw-bold'>Daily Consumption</TableCell>
                                 <TableCell align="left" className='fw-bold'>
-                                    <IoMdSearch style={{ fontSize: "22px" }} /> 
-                                    <FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /> 
+                                    <Link className='text-decoration-none text-dark'><IoMdSearch style={{ fontSize: "22px" }} /> </Link>
+                                    <Link className='text-decoration-none text-dark'><FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /></Link> 
                                 </TableCell>
                             </TableRow>
                         </TableHead>
@@ -200,8 +200,8 @@ function Downloads() {
                                 <TableCell align="center" className='fw-bold table-text'>current( Y Phase )</TableCell>
                                 <TableCell align="center" className='fw-bold table-text'>current( B Phase )</TableCell>
                                 <TableCell align="left" className='fw-bold'>
-                                    <IoMdSearch style={{ fontSize: "22px" }} /> 
-                                    <FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /> 
+                                    <Link className='text-decoration-none text-dark'><IoMdSearch style={{ fontSize: "22px" }} /></Link> 
+                                    <Link className='text-decoration-none text-dark'><FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /></Link> 
                                 </TableCell>
                             </TableRow>
                         </TableHead>

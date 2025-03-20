@@ -43,6 +43,10 @@ select {
 .admin-text {
     font-size: 12px;
 }
+.text-green {
+    color: rgb(13, 216, 13);
+    font-weight: bold;
+}
 
 @media (min-width: 768px) {
     .custom-vh {
@@ -50,7 +54,7 @@ select {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1920px) {
     .custom-container-1800 {
         min-width: 1800px;
     }
@@ -60,4 +64,4 @@ select {
     .sub-text {
         font-size: 22px;
     }
- }
+}

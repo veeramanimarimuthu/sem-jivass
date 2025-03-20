@@ -7,6 +7,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { RiFullscreenFill } from "react-icons/ri";
 import CurrentChart from './CurrentChart';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -14,22 +15,22 @@ function Home() {
         <div className="container custom-container-1800 mt-5">
             <div className="row mb-3 justify-content-around text-center">
                 <div className="col-1 shadow-lg py-2">
-                    <h5>HOME</h5>
+                    <Link to='/home' className='text-decoration-none text-dark'><h5>HOME</h5></Link>
                 </div>
                 <div className="col-2 shadow-lg py-2">
-                    <h5><BsGraphUpArrow /> ANALYTICS</h5>
+                    <Link to='/home' className='text-decoration-none text-dark'><h5><BsGraphUpArrow /> ANALYTICS</h5></Link>
                 </div>
                 <div className="col-2 shadow-lg py-2">
-                    <h5><AiFillThunderbolt /> ENERGYMETERS</h5>
+                    <Link to='/home' className='text-decoration-none text-dark'><h5><AiFillThunderbolt /> ENERGYMETERS</h5></Link>
                 </div>
                 <div className="col-2 shadow-lg py-2">
-                    <h5><LiaDownloadSolid /> DOWNLOADS</h5>
+                    <Link to='/downloads'  className='text-decoration-none text-dark'><h5><LiaDownloadSolid /> DOWNLOADS</h5></Link>
                 </div>
                 <div className="col-2 shadow-lg py-2">
                     <h5>Location: Chennai</h5>
                 </div>
                 <div className="col-2 shadow-lg py-2">
-                    <h5>EM Status: <span>Active</span>(17/03/2025 12:15:23)</h5>
+                    <h5>EM Status: <span className='text-green'>Active</span>(17/03/2025 12:15:23)</h5>
                 </div>
             </div>
             <div className="row mb-3 justify-content-around text-center">
