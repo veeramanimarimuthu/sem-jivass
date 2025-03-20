@@ -1,0 +1,63 @@
+* {
+    font-family: 'Roboto';
+    margin: 0;
+}
+.custom-table .MuiTableCell-root {
+    border-bottom: none !important;
+}
+.charts h5 {
+    font-size: 15px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.form-control:focus {
+    border-color: #dee2e6 !important;;
+    box-shadow: none !important;
+}
+select {
+    border-color: #dee2e6 !important;;
+    box-shadow: none !important;
+}
+.custom-btn {
+    z-index: 99 !important;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: black;
+    font-size: 18px;
+}
+.custom-btn:active {
+    border: none !important;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    border-top-left-radius: none !important;
+    border-bottom-left-radius: none !important;
+}
+.main-text {
+    font-size: 16px;
+}
+.sub-text {
+    font-size: 12px;
+}
+.admin-text {
+    font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    .custom-vh {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .custom-container-1800 {
+        min-width: 1800px;
+    }
+    .main-text {
+        font-size: 25px;
+    }
+    .sub-text {
+        font-size: 22px;
+    }
+ }

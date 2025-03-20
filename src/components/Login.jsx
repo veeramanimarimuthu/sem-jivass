@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
@@ -13,23 +14,24 @@ function Login() {
                     <p className="text-muted">Continue</p>
                     <div className="mb-3">
                         <label className="form-label">User name or ID</label>
-                        <input type="text" className="form-control" placeholder="Enter your user name or ID" />
+                        <input type="text" className="form-control" placeholder="Enter your user name or ID" style={{ fontSize: "14px"}} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Password</label>
                         <div className="input-group">
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            className="form-control"
-                            placeholder="Enter your password"
-                        />
-                        <button 
-                            className="btn position-absolute end-0 z-3" 
-                            type="button" 
-                            onClick={() => setShowPassword(!showPassword)}
-                        >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </button>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                className="form-control"
+                                placeholder="Enter your password"
+                                style={{ fontSize: "14px"}}
+                            />
+                            <a 
+                                className="custom-btn" 
+                                type="button" 
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </a>
                         </div>
                     </div>   
                     <div className="d-flex justify-content-between mb-3">
@@ -41,7 +43,7 @@ function Login() {
                     </div>
                     <button className="btn btn-primary w-100">Login</button>  
                     <p className="text-center mt-3">
-                        Don't have an Account? <a href="#" className="fw-bold text-primary">Register</a>
+                        Don't have an Account? <Link to="/register" className="fw-bold text-primary">Register</Link>
                     </p>
                   </div>
             </div>

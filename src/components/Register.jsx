@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Register() {
   return (
     <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-6 d-flex  align-items-center vh-100">
+        <div className="row">
+            <div className="col-10 col-lg-12 d-flex pt-5 pt-md-0 justify-content-center align-items-center custom-vh">
               <div>
                 <h2 className="fw-bold">Register</h2>
                 <p className="text-muted">
@@ -94,7 +95,7 @@ function Register() {
                 </form>
         
                 <p className="text-center mt-3">
-                  Already have an account? <a href="#" className="fw-bold text-primary">Login here</a>
+                  Already have an account? <Link to="/" className="fw-bold text-primary">Login here</Link>
                 </p>
               </div>
             </div>
