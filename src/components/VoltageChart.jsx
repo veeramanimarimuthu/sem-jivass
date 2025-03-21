@@ -88,7 +88,7 @@ function VoltageChart() {
   return (
     <div>
         <Line data={data} options={options} />
-        <table class="table w-50 table-borderless">
+        <table className="table w-50 table-borderless">
         <thead>
           <tr>
             <th>Min</th>

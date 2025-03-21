@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
 
-function CurrentChart() {
+function PowerFactorTrendChart() {
+
   const labels = ["20:00", "Mar 9", "04:00", "06:00", "08:00", "12:00"];
 
-  const currentB = [7, 6, 8, 7.5, 6.8, 10, -2, 22];
-  const currentY = [9, 9.5, 9.8, 10, 9.2, 10.5, 0.62, 23.6];
-  const currentR = [13, 11.5, 13, 13, 12, 14.5, 2.8, 25.6];
+  const currentB = [1.2, 0, 1, 1.21, 1.22, 1.23, 0.59, 0.88, 0.70, 1];
+  const currentY = [1.4, 0, 1, 1.41, 1.32, 1.46, 0.70, 0.80, 0.60, 1];
+  const currentR = [1.3, 0, 1, 1.31, 1.42, 1.53, 0.74, 0.85, 0.64, 1];
 
   const data = {
     labels,
@@ -70,20 +71,19 @@ function CurrentChart() {
       },
       y: {
         ticks: {
-            stepSize: 5,
+            stepSize: 1,
         },
         grid: {
           color: "#ddd",
         },
         beginAtZero: true,
         border: {
-            display: false, 
+            display: true, 
         },
       },
     },
   };
 
-  // Function to calculate Min, Max, and Avg
   const calculateStats = (data) => ({
     min: Math.min(...data),
     max: Math.max(...data),
@@ -96,36 +96,31 @@ function CurrentChart() {
 
   return (
     <>
-      <Line data={data} options={options} />
-      
-      <table className="table w-50 table-borderless">
+        <Line data={data} options={options} />
+       
+        <table className="table w-50 table-borderless text-end mb-0">
         <thead>
-          <tr>
-            <th>Min</th>
-            <th>Max</th>
-            <th>Avg</th>
-          </tr>
+            <tr>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Avg</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{statsB.min} A</td>
-            <td>{statsB.max} A</td>
-            <td>{statsB.avg} A</td>
-          </tr>
-          <tr>
-            <td>{statsY.min} A</td>
-            <td>{statsY.max} A</td>
-            <td>{statsY.avg} A</td>
-          </tr>
-          <tr>
-            <td>{statsR.min} A</td>
-            <td>{statsR.max} A</td>
-            <td>{statsR.avg} A</td>
-          </tr>
+            <tr>
+                <td>{statsB.min}</td>
+                <td>{statsB.max}</td>
+                <td>{statsB.avg}</td>
+            </tr>
+            <tr>
+                <td>{statsY.min}</td>
+                <td>{statsY.max}</td>
+                <td>{statsY.avg}</td>
+            </tr>
         </tbody>
-      </table>
+        </table>
     </>
-  );
+  )
 }
 
-export default CurrentChart;
+export default PowerFactorTrendChart

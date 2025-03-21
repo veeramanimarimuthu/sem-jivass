@@ -6,12 +6,16 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 function FrequencyChart() {
 
+  const labels = ["20:00", "Mar 6", "04:00", "08:00", "12:00", "16:00"];
+
+  const frequency = [50, 49.9, 51, 48, 50, 50, 50, 47, 51, 48, 50, 50,];
+
     const data = {
-        labels: ["20:00", "Mar 6", "04:00", "08:00", "12:00", "16:00"],
+        labels,
         datasets: [
           {
             label: "Frequency",
-            data: [50, 49.9, 51, 48, 50, 50, 50, 47, 51, 48, 50, 50,],
+            data: frequency,
             fill: true,
             backgroundColor: "rgba(54, 162, 235, 0.2)",
             borderColor: "rgb(78, 79, 80)",
@@ -37,26 +41,58 @@ function FrequencyChart() {
         },
         scales: {
           x: {
-            grid: { display: false }, 
+            grid: { 
+              display: false,
+              drawBorder: false 
+            }, 
+            ticks: {
+              drawTicks: true, 
+            },
           },
           y: {
             min: 49,
             max: 51,
             ticks: {
               stepSize: 1, 
-              callback: (value) => `${value}`, 
+              drawTicks: true, 
             },
             grid: {
-              drawTicks: true, 
               drawBorder: false, 
               color: "rgba(0, 0, 0, 0.1)", 
             },
           },
         },
       };
-    
 
-  return <Line data={data} options={options} />
+      const calculateStats = (data) => ({
+        min: Math.min(...data),
+        max: Math.max(...data),
+        avg: (data.reduce((a, b) => a + b, 0) / data.length).toFixed(2),
+      });
+    
+      const statsB = calculateStats(frequency);   
+
+  return (
+    <>
+      <Line data={data} options={options} />
+      <table className="table w-50 table-borderless mb-0">
+          <thead>
+              <tr>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <th>Avg</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>{statsB.min} A</td>
+                  <td>{statsB.max} A</td>
+                  <td>{statsB.avg} A</td>
+              </tr>
+          </tbody>
+        </table>
+    </>
+  )
 }
 
 export default FrequencyChart

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Register() {
   return (
-    <div className="container">
-        <div className="row">
-            <div className="col-10 col-lg-12 d-flex pt-5 pt-md-0 justify-content-center align-items-center custom-vh">
+    <div className="container mt-5">
+        <div className="row justify-content-center mt-5">
+            <div className="col-10 col-lg-6 d-flex pt-5 justify-content-center align-items-center custom-vh mt-5">
               <div>
                 <h2 className="fw-bold">Register</h2>
                 <p className="text-muted">

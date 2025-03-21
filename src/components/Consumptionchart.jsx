@@ -11,21 +11,21 @@ function Consumptionchart() {
         datasets: [
             {
               label: "Kwh",
-              data: [8, 7, 4, 6, 7, 5, 6.5],
+              data: [8, 7, 4, 6, 7, 5, 6.5, 5, 6, 3, 4, 6, 4, 5, 6, 5, 4, 5, 6, 3, 4,],
               backgroundColor: "rgba(106, 13, 173, 0.8)", 
             },
             {
-              label: "Kwh",
+              label: "",
               data: [5, 6, 3, 4, 6, 4, 5],
               backgroundColor: "rgba(106, 13, 173, 0.8)", 
             },
             {
-              label: "Kwh",
+              label: "",
               data: [6, 5, 4, 5, 6, 3, 4],
               backgroundColor: "rgba(106, 13, 173, 0.8)",
             },
             {
-              label: "Kwh",
+              label: "",
               data: [7, 6, 5, 7, 8, 6, 7],
               backgroundColor: "rgba(106, 13, 173, 0.8)", 
             },

@@ -37,8 +37,9 @@ const rows = [
     createData1(10,'2025-03-10 21:33:30', 61996.01, 7147.08, 50.08, 232.46, 0.98, 32.76),
 ];
 
-function createData2(timestamp, dailyconsumption, unit) {
+function createData2(id, timestamp, dailyconsumption, unit) {
     return { 
+        id,
         timestamp,
          dailyconsumption, 
          unit 
@@ -46,20 +47,21 @@ function createData2(timestamp, dailyconsumption, unit) {
 }
 
 const data = [
-    createData2('2025-03-03 00:00:00', 288.88, 'kWh'),
-    createData2('2025-03-04 00:00:00', 291.93, 'kWh'),
-    createData2('2025-03-05 00:00:00', 292.06, 'kWh'),
-    createData2('2025-03-06 00:00:00', 291.04, 'kWh'),
-    createData2('2025-03-07 00:00:00', 290.02, 'kWh'),
-    createData2('2025-03-08 00:00:00', 288.14, 'kWh'),
-    createData2('2025-03-09 00:00:00', 288.85, 'kWh'),
-    createData2('2025-03-10 00:00:00', 291.95, 'kWh'),
-    createData2('2025-03-11 00:00:00', 291.04, 'kWh'),
-    createData2('2025-03-12 00:00:00', 291.09, 'kWh'),
+    createData2(1, '2025-03-03 00:00:00', 288.88, 'kWh'),
+    createData2(2, '2025-03-04 00:00:00', 291.93, 'kWh'),
+    createData2(3, '2025-03-05 00:00:00', 292.06, 'kWh'),
+    createData2(4, '2025-03-06 00:00:00', 291.04, 'kWh'),
+    createData2(5, '2025-03-07 00:00:00', 290.02, 'kWh'),
+    createData2(6, '2025-03-08 00:00:00', 288.14, 'kWh'),
+    createData2(7, '2025-03-09 00:00:00', 288.85, 'kWh'),
+    createData2(8, '2025-03-10 00:00:00', 291.95, 'kWh'),
+    createData2(9, '2025-03-11 00:00:00', 291.04, 'kWh'),
+    createData2(10, '2025-03-12 00:00:00', 291.09, 'kWh'),
 ];
 
-function createData(timestamp, voltageR, voltageY, voltageB, currentR, currentY, currentB) {
+function createData(id, timestamp, voltageR, voltageY, voltageB, currentR, currentY, currentB) {
     return { 
+        id,
         timestamp, 
         voltageR, 
         voltageY, 
@@ -71,11 +73,11 @@ function createData(timestamp, voltageR, voltageY, voltageB, currentR, currentY,
   }
 
 const phaseData = [
-    createData('2025-03-10 22:18:30', 245.35, 233.35, 221.35, 13.90, 9.90, 5.90),
-    createData('2025-03-10 22:03:30', 240.89, 230.89, 220.89, 11.90, 9.90, 7.90),
-    createData('2025-03-10 21:48:30', 236.35, 225.35, 214.35, 13.77, 10.77, 7.77),
-    createData('2025-03-10 21:18:30', 239.37, 228.37, 217.37, 13.52, 10.57, 7.57),
-    createData('2025-03-10 23:03:30', 240.37, 233.35, 220.89, 11.90, 9.90, 5.89),
+    createData(0, '2025-03-10 22:18:30', 245.35, 233.35, 221.35, 13.90, 9.90, 5.90),
+    createData(1, '2025-03-10 22:03:30', 240.89, 230.89, 220.89, 11.90, 9.90, 7.90),
+    createData(2, '2025-03-10 21:48:30', 236.35, 225.35, 214.35, 13.77, 10.77, 7.77),
+    createData(3, '2025-03-10 21:18:30', 239.37, 228.37, 217.37, 13.52, 10.57, 7.57),
+    createData(4, '2025-03-10 23:03:30', 240.37, 233.35, 220.89, 11.90, 9.90, 5.89),
 ];
   
 
@@ -89,7 +91,7 @@ function Downloads() {
             <div className='d-flex align-items-center'>
                 <h3 className='text-bold main-text'>Smart Enerymeter Monitoring</h3>
                 <Link to='' className="text-muted px-3 text-decoration-none sub-text">Energy Monitoring</Link> <IoIosArrowForward style={{ fontSize: "22px" }} />
-                <Link to='/home' className="text-muted ps-3 text-decoration-none sub-text">Downloads</Link>
+                <Link to='/downloads' className="text-muted ps-3 text-decoration-none sub-text">Downloads</Link>
             </div>
             <div className='d-flex align-items-center justify-content-center justify-content-sm-start pt-4 pt-md-0'>
                 <Link className='text-decoration-none text-dark'><CiSearch style={{ fontSize: "22px" }} /></Link>
@@ -104,7 +106,7 @@ function Downloads() {
             </div>
           </div>
         </div>
-        <div className="row mx-md-2 py-2">
+        <div className="row py-2">
             <div className='col-12 d-flex justify-content-between pt-2 align-items-center'>
                 <Link to='/home' className='text-dark text-decoration-none'><IoMdArrowBack style={{ fontSize: "22px" }} /> Back</Link>
                 <p className='sub-text mb-0'>Selected Range 10/03/2025 to 11/03/2025</p>
@@ -131,13 +133,13 @@ function Downloads() {
                     <Table>
                         <TableHead>
                             <TableRow> 
-                                <TableCell align="center" className='fw-bold'>Timestamp</TableCell>
-                                <TableCell align="center" className='fw-bold'>Total KWh</TableCell>
-                                <TableCell align="center" className='fw-bold'>Total power(RYB)</TableCell>
-                                <TableCell align="center" className='fw-bold'>frequency</TableCell>
-                                <TableCell align="center" className='fw-bold'>voltage()Avg</TableCell>
-                                <TableCell align="center" className='fw-bold'>power Factor(Avg)</TableCell>
-                                <TableCell align="center" className='fw-bold'>Total current(RYB)</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>Timestamp</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>Total KWh</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>Total power(RYB)</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>frequency</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>voltage()Avg</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>power Factor(Avg)</TableCell>
+                                <TableCell align="center" className='fw-bold p-0 table-font'>Total current(RYB)</TableCell>
                                 <TableCell align="left" className='fw-bold'>
                                     <Link className='text-decoration-none text-dark'><IoMdSearch style={{ fontSize: "22px" }} /> </Link>
                                     <Link className='text-decoration-none text-dark'><FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /> </Link>
@@ -192,13 +194,13 @@ function Downloads() {
                     <Table className="custom-table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center" className='fw-bold table-text'>Timestamp</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>voltage( R Phase )</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>voltage( Y Phase )</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>voltage( B Phase )</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>current( R Phase )</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>current( Y Phase )</TableCell>
-                                <TableCell align="center" className='fw-bold table-text'>current( B Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>Timestamp</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>voltage( R Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>voltage( Y Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>voltage( B Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>current( R Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>current( Y Phase )</TableCell>
+                                <TableCell align="center" className='fw-bold table-text p-0'>current( B Phase )</TableCell>
                                 <TableCell align="left" className='fw-bold'>
                                     <Link className='text-decoration-none text-dark'><IoMdSearch style={{ fontSize: "22px" }} /></Link> 
                                     <Link className='text-decoration-none text-dark'><FaRegFilePdf className='ps-2' style={{ fontSize: "22px" }} /></Link> 

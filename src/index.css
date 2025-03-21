@@ -5,10 +5,11 @@
 .custom-table .MuiTableCell-root {
     border-bottom: none !important;
 }
-.charts h5 {
-    font-size: 15px;
+
+.header-text {
+    font-size: 11px;
     margin-bottom: 0;
-    font-weight: bold;
+    font-weight: bold;  
 }
 .form-control:focus {
     border-color: #dee2e6 !important;;
@@ -51,6 +52,18 @@ select {
 @media (min-width: 768px) {
     .custom-vh {
         height: 100vh;
+    }
+    .reading-text {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .custom-container-1800 {
+        min-width: 1250px;
+    } 
+    .table-font {
+        font-size: 12px !important;
     }
 }
 
